@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Periodic_Table.Element"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Periodic_Table"
+             mc:Ignorable="d" 
+             MouseEnter="UserControl_MouseEnter"
+             MouseLeave="UserControl_MouseLeave"
+             Loaded="UserControl_Loaded"
+             d:DesignHeight="90" d:DesignWidth="90" Foreground="White" Background="#FF101318">
+    <UserControl.Effect>
+        <DropShadowEffect x:Name="glowEffect" Color="White" ShadowDepth="0"/>
+    </UserControl.Effect>
+    <Grid>
+        <Rectangle x:Name="eBorder" StrokeThickness="2" Stroke="White">
+        </Rectangle>
+        <TextBlock x:Name="eNum" HorizontalAlignment="Left" Margin="6,3,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="31" FontSize="15"/>
+        <TextBlock x:Name="eSymbol" TextAlignment="Center" Margin="0,0,0,20" TextWrapping="Wrap" Text="H" FontSize="40" Height="45" FontWeight="Bold"/>
+        <TextBlock x:Name="eName" HorizontalAlignment="Left" TextAlignment="Center" Margin="3,67,0,0" TextWrapping="Wrap" Text="Hydrogen" VerticalAlignment="Top" Width="84"/>
+
+    </Grid>
+</UserControl>
