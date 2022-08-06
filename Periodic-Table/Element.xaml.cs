@@ -26,17 +26,19 @@ namespace Periodic_Table
         int num;
         string symbol;
         string name;
+        string orbital;
 
         public Element()
         {
             InitializeComponent();
         }
         
-        public Element(Group group, int n, string symbol, string name) 
+        public Element(Group group, int n, string o, string symbol, string name) 
         {
             InitializeComponent();
             this.group = group;
             this.num = n;
+            this.orbital = o;
             this.symbol = symbol;
             this.name = name;
         }
@@ -161,6 +163,22 @@ namespace Periodic_Table
                 num = value;
                 eNum.Text = value.ToString();
                 if (value == 0)
+                {
+                    eNum.Text = "";
+                }
+            }
+        }
+        public string em_orbital
+        {
+            get
+            {
+                return orbital;
+            }
+            set
+            {
+                orbital = value;
+                eNum.Text = value.ToString();
+                if (value == "")
                 {
                     eNum.Text = "";
                 }

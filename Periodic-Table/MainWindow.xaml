@@ -19,7 +19,9 @@
                 <Grid x:Name="group5" HorizontalAlignment="Left" Height="665" VerticalAlignment="Top" Width="90" Margin="390,0,0,0"/>
                 <Grid x:Name="group6" HorizontalAlignment="Left" Height="665" VerticalAlignment="Top" Width="90" Margin="485,0,0,0"/>
                 <Grid x:Name="group7" HorizontalAlignment="Left" Height="665" VerticalAlignment="Top" Width="90" Margin="580,0,0,0"/>
-                <Grid x:Name="group8" HorizontalAlignment="Left" Height="665" VerticalAlignment="Top" Width="90" Margin="675,0,0,0"/>
+                <Grid x:Name="group8" HorizontalAlignment="Left" Height="665" VerticalAlignment="Top" Width="90" Margin="675,0,0,0">
+                    <Label Content="O" HorizontalAlignment="Left" Height="32" Margin="47,215,0,0" VerticalAlignment="Top" Width="182"/>
+                </Grid>
                 <Grid x:Name="group9" HorizontalAlignment="Left" Height="665" VerticalAlignment="Top" Width="90" Margin="770,0,0,0"/>
                 <Grid x:Name="group10" HorizontalAlignment="Left" Height="665" VerticalAlignment="Top" Width="90" Margin="865,0,0,0"/>
                 <Grid x:Name="group11" HorizontalAlignment="Left" Height="665" VerticalAlignment="Top" Width="90" Margin="960,0,0,0"/>
@@ -61,6 +63,27 @@
                         </TransformGroup>
                     </local:Obital.RenderTransform>
                 </local:Obital>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="45" Margin="694,304,0,0" VerticalAlignment="Top" Width="256" RenderTransformOrigin="0.5,0.5">
+                <TextBlock x:Name="O" Margin="0,11,0,0" RenderTransformOrigin="0.5,0.5" Foreground="White" FontWeight="Bold" FontSize="20" Text="" TextAlignment="Center">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+
             </Grid>
             <Border BorderBrush="#7FFFFFFF" BorderThickness="2,0,0,2" HorizontalAlignment="Left" Height="174" Margin="245,741,0,0" VerticalAlignment="Top" Width="39"/>
         </Grid>
