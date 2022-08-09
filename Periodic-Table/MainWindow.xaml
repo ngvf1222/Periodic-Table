@@ -39,30 +39,14 @@
             </Grid>
             <Grid HorizontalAlignment="Left" Height="256" Margin="694,34,0,0" VerticalAlignment="Top" Width="256" RenderTransformOrigin="0.5,0.5">
                 <Rectangle x:Name="obitalBorder" Stroke="White" StrokeThickness="2" Fill="#CC101318"/>
-                <Ellipse x:Name="positron" Height="40" Width="40" Fill="#7FFFFFFF"/>
-                <local:Obital x:Name="obital_K" Radius="100" ElectronCount="0"/>
-                <local:Obital x:Name="obital_L_1" Radius="150" ElectronCount="0"/>
-                <local:Obital x:Name="obital_L_2" Radius="150" ElectronCount="0" ShowRing="False" RenderTransformOrigin="0.5,0.5">
-                    <local:Obital.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="45"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </local:Obital.RenderTransform>
-                </local:Obital>
-                <local:Obital x:Name="obital_M_1" Radius="200" ElectronCount="0"/>
-                <local:Obital x:Name="obital_M_2" Radius="200" ElectronCount="0" ShowRing="False" RenderTransformOrigin="0.5,0.5">
-                    <local:Obital.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="45"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </local:Obital.RenderTransform>
-                </local:Obital>
+                <Ellipse x:Name="positron" Height="20" Width="20" Fill="#7FFFFFFF"/>
+                <local:Obital x:Name="obital_K" Radius="50" ElectronCount="0"/>
+                <local:Obital x:Name="obital_L_1" Radius="75" ElectronCount="0"/>
+                <local:Obital x:Name="obital_M_1" Radius="100" ElectronCount="0"/>
+                <local:Obital x:Name="obital_N_1" Radius="125" ElectronCount="0"/>
+                <local:Obital x:Name="obital_O_1" Radius="150" ElectronCount="0"/>
+                <local:Obital x:Name="obital_P_1" Radius="175" ElectronCount="0"/>
+                <local:Obital x:Name="obital_Q_1" Radius="200" ElectronCount="0"/>
             </Grid>
             <Grid HorizontalAlignment="Left" Height="45" Margin="694,304,0,0" VerticalAlignment="Top" Width="256" RenderTransformOrigin="0.5,0.5">
                 <TextBlock x:Name="O" Margin="0,11,0,0" RenderTransformOrigin="0.5,0.5" Foreground="White" FontWeight="Bold" FontSize="20" Text="" TextAlignment="Center">
@@ -86,6 +70,8 @@
 
             </Grid>
             <Border BorderBrush="#7FFFFFFF" BorderThickness="2,0,0,2" HorizontalAlignment="Left" Height="174" Margin="245,741,0,0" VerticalAlignment="Top" Width="39"/>
+            <TextBlock HorizontalAlignment="Left" Height="20" Margin="540,13,0,0" TextWrapping="Wrap" Text="⚠️주의: 이 아래 보여지는 전자에 회전속도는 실제보다 10  배 빠릅니다⚠️" VerticalAlignment="Top" Width="564" FontWeight="Bold" Foreground="White" FontSize="16"/>
+            <TextBlock HorizontalAlignment="Left" Height="13" Margin="957,7,0,0" TextWrapping="Wrap" Text="20" VerticalAlignment="Top" Width="18" Foreground="White" FontSize="10"/>
         </Grid>
         <Grid x:Name="TopGrid" Height="30" MouseDown="Grid_MouseDown" VerticalAlignment="Top" Background="#0CFFFFFF">
             <Rectangle Fill="#19FF0000" HorizontalAlignment="Right" MouseDown="Rectangle_MouseDown" Width="28"/>

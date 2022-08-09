@@ -20,18 +20,19 @@ namespace Periodic_Table
     /// </summary>
     public partial class Obital : UserControl
     {
-        public Ellipse[] Electron = new Ellipse[4];
-
+        public List<Ellipse> Electron = new List<Ellipse>();
+        
         public Obital()
         {
             InitializeComponent();
-            for (int i = 0; i < Electron.Length; i++)
+            Electron.Add(new Ellipse());
+            for (int i = 0; i < Electron.Count; i++)
             {
                 Electron[i] = new Ellipse();
                 Electron[i].Fill = new SolidColorBrush(Colors.White);
                 Electron[i].Opacity = 0.7;
-                Electron[i].Width = 10;
-                Electron[i].Height = 10;
+                Electron[i].Width = 5;
+                Electron[i].Height = 5;
                 grid.Children.Add(Electron[i]);
             }
         }
@@ -69,30 +70,27 @@ namespace Periodic_Table
         {
             set
             {
-                for (int i = 0; i < Electron.Length; i++)
-                {
-                    Electron[i].Visibility = Visibility.Hidden;
-                }
+                Ellipse r = ring;
+                grid.Children.Clear();
+                Electron.Clear();
                 if (value < 0)
                 {
 
                 }
                 else
                 {
-                    if (value <= 4)
-                    {
-                        for (int i = 0; i < value; i++)
-                        {
-                            Electron[i].Visibility = Visibility.Visible;
-                        }
+                    //< Ellipse x: Name = "ring" Stroke = "White" Opacity = "0.5" Margin = "5,5,5,5" StrokeThickness = "3" />
+                    grid.Children.Add(r);
+                    for (int i = 0; i < value; i++) {
+                            Electron.Add(new Ellipse());
+                            Electron[i] = new Ellipse();
+                            Electron[i].Fill = new SolidColorBrush(Colors.White);
+                            Electron[i].Opacity = 0.7;
+                            Electron[i].Width = 5;
+                            Electron[i].Height = 5;
+                            grid.Children.Add(Electron[i]);
                     }
-                    else
-                    {
-                        for (int i = 0; i < 4; i++)
-                        {
-                            Electron[i].Visibility = Visibility.Visible;
-                        }
-                    }
+                    posSet();
                 }
             }
         }
@@ -100,13 +98,10 @@ namespace Periodic_Table
         void posSet()
         {
             double r = Width - 14;
-            double rm = -r;
-            double r2 = Width - 68;
-            double rm2 = -r2;
-            Electron[0].Margin = new Thickness(r, 0, 0, 0);
-            Electron[1].Margin = new Thickness(rm, 0, 0, 0);
-            Electron[2].Margin = new Thickness(0, r, 0, 0);
-            Electron[3].Margin = new Thickness(0, rm, 0, 0);
+            for (int i = 0; i < Electron.Count; i++)
+            {
+                Electron[i].Margin = new Thickness(r*Math.Cos(Math.PI*2/Electron.Count*i), r * Math.Sin(Math.PI * 2 / Electron.Count * i), 0, 0);
+            }
 
             /*Electron[4].Margin = new Thickness(r2, r2, 0, 0);
             Electron[5].Margin = new Thickness(r2, rm2, 0, 0);
@@ -125,7 +120,7 @@ namespace Periodic_Table
             {
                 SolidColorBrush c = new SolidColorBrush(value);
                 ring.Stroke = c;
-                for(int i=0; i<Electron.Length; i++)
+                for(int i=0; i<Electron.Count; i++)
                 {
                     Electron[i].Fill = c;
                 }

@@ -23,32 +23,34 @@ namespace Periodic_Table
     {
         Group group = Group.Unknown;
         Color groupColor = Color.FromRgb(255, 255, 255);
-        int num;
+        private int[] num = new int[7] { 0, 0, 0, 0, 0, 0, 0 };
         string symbol;
         string name;
         string orbital;
-
+        int[] null_ = new int[] { 0,0,0,0,0,0,0 };
         public Element()
         {
             InitializeComponent();
         }
         
-        public Element(Group group, int n, string o, string symbol, string name) 
+        public Element(Group group, int[] n, string o, string symbol, string name) 
         {
             InitializeComponent();
             this.group = group;
-            this.num = n;
+            this.Num = n;
             this.orbital = o;
             this.symbol = symbol;
             this.name = name;
+            
         }
         
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             myGroup = group;
             em_Name = name;
-            em_Num = num;
+            em_Num = Num;
             em_Symbol = symbol;
+            Console.WriteLine(em_Name);
         }
 
         public Group myGroup
@@ -152,17 +154,17 @@ namespace Periodic_Table
             }
         }
         
-        public int em_Num
+        public int[] em_Num
         {
             get
             {
-                return num;
+                return Num;
             }
             set
             {
-                num = value;
-                eNum.Text = value.ToString();
-                if (value == 0)
+                Num = value;
+                eNum.Text = (value[0]+ value[1]+ value[2]+value[3]+ value[4]+ value[5]+ value[6]).ToString();
+                if (Enumerable.SequenceEqual(value,null_))
                 {
                     eNum.Text = "";
                 }
@@ -185,6 +187,9 @@ namespace Periodic_Table
             }
         }
 
+        public int[] Num { get => num; set => num = value; }
+        public int[] Num1 { get => num; set => num = value; }
+
         void rectC(Color to, double sec)
         {
             ColorAnimation an = new ColorAnimation();
@@ -196,7 +201,7 @@ namespace Periodic_Table
 
         private void UserControl_MouseEnter(object sender, MouseEventArgs e)
         {
-            if (num != 0)
+            if (!Enumerable.SequenceEqual(Num, null_))
             {
                 rectC(Color.FromRgb(46, 49, 54), 0.2);
             }
@@ -204,7 +209,7 @@ namespace Periodic_Table
 
         private void UserControl_MouseLeave(object sender, MouseEventArgs e)
         {
-            if (num != 0)
+            if (!Enumerable.SequenceEqual(Num, null_))
             {
                 rectC(Color.FromRgb(16, 19, 24), 0.2);
             }
