@@ -75,6 +75,7 @@
         </Grid>
         <Grid x:Name="TopGrid" Height="30" MouseDown="Grid_MouseDown" VerticalAlignment="Top" Background="#0CFFFFFF">
             <Rectangle Fill="#19FF0000" HorizontalAlignment="Right" MouseDown="Rectangle_MouseDown" Width="28"/>
+            <TextBlock HorizontalAlignment="Left" Height="30" Margin="0,-2,0,0" TextWrapping="Wrap" Text="Made by Function1790&amp;ngvf1222" VerticalAlignment="Top" Width="400" Foreground="White" FontWeight="Bold"/>
         </Grid>
     </Grid>
 </Window>
