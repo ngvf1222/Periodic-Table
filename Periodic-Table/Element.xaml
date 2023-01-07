@@ -17,6 +17,8 @@
         </Rectangle>
         <TextBlock x:Name="eNum" HorizontalAlignment="Left" Margin="6,3,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="31" FontSize="15"/>
         <TextBlock x:Name="eSymbol" TextAlignment="Center" Margin="0,0,0,20" TextWrapping="Wrap" Text="H" FontSize="40" Height="45" FontWeight="Bold"/>
+        <TextBlock x:Name="eA_r" TextAlignment="Center" Margin="0,57,0,19" TextWrapping="Wrap" Text="" FontSize="10
+                   " FontWeight="Bold"/>
         <TextBlock x:Name="eName" HorizontalAlignment="Left" TextAlignment="Center" Margin="3,67,0,0" TextWrapping="Wrap" Text="Hydrogen" VerticalAlignment="Top" Width="84"/>
 
     </Grid>

@@ -27,13 +27,14 @@ namespace Periodic_Table
         string symbol;
         string name;
         string orbital;
+        double A_r;
         int[] null_ = new int[] { 0,0,0,0,0,0,0 };
         public Element()
         {
             InitializeComponent();
         }
         
-        public Element(Group group, int[] n, string o, string symbol, string name) 
+        public Element(Group group, int[] n, string o, string symbol, string name, double A_r) 
         {
             InitializeComponent();
             this.group = group;
@@ -41,7 +42,7 @@ namespace Periodic_Table
             this.orbital = o;
             this.symbol = symbol;
             this.name = name;
-            
+            this.A_r = A_r;
         }
         
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -50,6 +51,7 @@ namespace Periodic_Table
             em_Name = name;
             em_Num = Num;
             em_Symbol = symbol;
+            em_A_r = A_r;
             Console.WriteLine(em_Name);
         }
 
@@ -126,6 +128,7 @@ namespace Periodic_Table
             eNum.Foreground = solid;
             eName.Foreground = solid;
             eSymbol.Foreground = solid;
+            eA_r.Foreground = solid;
         }
 
         public string em_Symbol
@@ -186,7 +189,22 @@ namespace Periodic_Table
                 }
             }
         }
-
+        public double em_A_r
+        {
+            get
+            {
+                return A_r;
+            }
+            set
+            {
+                A_r = value;
+                eA_r.Text = value.ToString();
+                if (value == 0)
+                {
+                    eA_r.Text = "0";
+                }
+            }
+        }
         public int[] Num { get => num; set => num = value; }
         public int[] Num1 { get => num; set => num = value; }
 
